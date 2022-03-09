@@ -43,7 +43,7 @@ function App() {
   //   Load a new word on startup
   const getCurrentWord = () => {
     if (word === null || gameRestart) {
-      const newWord = birdNames[Math.floor(Math.random() * 64)].toLowerCase();
+      const newWord = birdNames[Math.floor(Math.random() * 72)].toLowerCase();
       setWord(newWord);
       setWordSplit(newWord.split(""));
     }
