@@ -162,7 +162,6 @@ function App() {
           tried.push(savedLetter);
         }
       }
-      console.log(tempLetters);
     });
     const newSaved = [...savedLetters, arr];
     setSavedLetters(newSaved);
