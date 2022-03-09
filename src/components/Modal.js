@@ -17,6 +17,7 @@ const Modal = ({ setGameRestart, won, gameEnd, row, word }) => {
             }}
             transition={{ delay: 1.5 }}
             className="modal-container"
+            id="endgame-modal"
           >
             <div className="modal">
               {won ? (

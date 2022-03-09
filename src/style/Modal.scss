@@ -120,3 +120,25 @@
     }
   }
 }
+
+@media (max-width: 700px) {
+  .modal-container {
+    justify-content: center;
+    align-items: flex-start;
+  }
+  .info-modal {
+    width: 100%;
+  }
+  .info-modal-foot {
+    flex-wrap: wrap;
+  }
+  .socials {
+    margin: auto;
+  }
+}
+#endgame-modal {
+  align-items: center;
+}
+.modal {
+  width: 100%;
+}

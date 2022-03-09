@@ -135,7 +135,7 @@ function App() {
       setAlertEnabled(false);
       setAlerting(false);
       setKeyboardDisabled(false);
-    }, 2500);
+    }, 1200);
   };
 
   const wordSaveHandle = () => {
@@ -182,12 +182,18 @@ function App() {
             </div>
           </div>
           <h1>birdle</h1>
-          <h2>
+          <h2 id="win-count">
             Birdle has been won{" "}
             <span className="playcount-box">{playCount}</span> times
           </h2>
         </div>
         <div className="alert-box">
+          <div className="mobile-play-count">
+            <h3 id="win-count">
+              Birdle has been won{" "}
+              <span className="playcount-box">{playCount}</span> times
+            </h3>
+          </div>
           {alertEnabled && <Alert alertMessage={alertMessage} />}
         </div>
       </div>

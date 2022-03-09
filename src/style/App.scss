@@ -51,6 +51,9 @@ body {
     width: 100%;
   }
 }
+.mobile-play-count {
+  display: none;
+}
 
 .Keyboard {
   margin-top: 10vh;
@@ -134,17 +137,28 @@ body {
 }
 
 @media (max-width: 700px) {
+  body {
+    overflow: visible;
+  }
   .header {
-    text-align: start;
-    margin: auto;
-    padding: 1rem 4rem 0 4rem;
-    display: flex;
-    justify-content: space-between;
-    height: auto;
-    align-items: center;
-    h1 {
-      width: auto;
+    height: 15vh;
+    .main-header {
+      flex-direction: row-reverse;
+      #win-count {
+        display: none;
+      }
     }
+  }
+  .alert-box {
+    position: relative;
+  }
+  .mobile-play-count {
+    display: block;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
   }
   .Keyboard {
     margin: 0;
@@ -156,7 +170,7 @@ body {
       margin: 3px;
       background-color: lightgray;
       &:disabled {
-        background-color: gray;
+        background-color: rgb(58, 58, 58);
       }
     }
   }
