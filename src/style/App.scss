@@ -1,0 +1,163 @@
+body {
+  background: rgb(27, 12, 6);
+  color: white;
+  font-weight: 200;
+  overflow: hidden;
+}
+.App {
+  text-align: center;
+}
+.header {
+  padding: 1rem 4rem 0 4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  height: 20vh;
+  .main-header {
+    height: 10vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    // flex-wrap: nowrap;
+    width: 100%;
+    height: 50%;
+    h1 {
+      font-weight: 400;
+      display: inline-block;
+      width: 33%;
+    }
+    h2 {
+      font-weight: 400;
+      display: inline-block;
+      width: 33%;
+    }
+    .info {
+      width: 33%;
+    }
+    .info-button {
+      cursor: pointer;
+    }
+    .playcount-box {
+      border: 1px solid white;
+      padding: 2px;
+      display: inline-block;
+      width: 2rem;
+      height: 2rem;
+    }
+  }
+  .alert-box {
+    height: 50%;
+    width: 100%;
+  }
+}
+
+.Keyboard {
+  margin-top: 10vh;
+  .key {
+    font-family: "Open Sans", sans-serif;
+    color: black;
+    font-weight: 600;
+    font-size: 2rem;
+    text-transform: capitalize;
+    cursor: pointer;
+    margin: 1px;
+    border: black;
+  }
+  :disabled {
+    cursor: auto;
+  }
+}
+
+.Game {
+  font-size: 16px;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+
+  .board-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+    overflow: hidden;
+    color: blue;
+
+    .board {
+      display: grid;
+      grid-template-rows: repeat(6, 1fr);
+      grid-gap: 5px;
+      padding: 10px;
+      box-sizing: border-box;
+      width: 350px;
+      height: 420px;
+
+      .row {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        grid-gap: 5px;
+
+        .tile {
+          transition: background-color 0.3s ease;
+          background-color: none;
+          width: 100%;
+          display: inline-flex;
+          justify-content: center;
+          align-items: center;
+          font-size: 2rem;
+          line-height: 2rem;
+          font-weight: bold;
+          vertical-align: middle;
+          box-sizing: border-box;
+          color: white;
+          text-transform: uppercase;
+          user-select: none;
+          border: 2px solid #80594a;
+          h3 {
+            margin: 0;
+            padding: 0;
+          }
+        }
+        .correct-place {
+          background-color: green;
+        }
+        .correct-letter {
+          background-color: rgb(236, 157, 39);
+        }
+        .not-found {
+          background-color: rgb(155, 155, 155);
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 700px) {
+  .header {
+    text-align: start;
+    margin: auto;
+    padding: 1rem 4rem 0 4rem;
+    display: flex;
+    justify-content: space-between;
+    height: auto;
+    align-items: center;
+    h1 {
+      width: auto;
+    }
+  }
+  .Keyboard {
+    margin: 0;
+    .key {
+      font-size: 2rem;
+      border-radius: 2px;
+      min-width: 2rem;
+      padding: 0;
+      margin: 3px;
+      background-color: lightgray;
+      &:disabled {
+        background-color: gray;
+      }
+    }
+  }
+}

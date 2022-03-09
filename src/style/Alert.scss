@@ -1,0 +1,19 @@
+.Alert {
+  display: inline-block;
+  // margin: auto;
+  padding: 0 1rem;
+  background-color: rgb(73, 30, 1);
+  border: 1px solid white;
+  border-radius: 1rem;
+  height: auto;
+  font-size: 0.8rem;
+  align-self: flex-start;
+}
+
+@media (max-width: 700px) {
+  // .Alert {
+  //   height: auto;
+  //   font-size: 0.8rem;
+  //   align-self: flex-start;
+  // }
+}

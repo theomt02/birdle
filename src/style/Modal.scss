@@ -1,0 +1,122 @@
+.modal-container {
+  opacity: 0;
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  background: hsla(0, 0%, 0%, 0.74);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal {
+  //   height: 50%;
+  width: 33%;
+  background: rgb(2, 36, 2);
+  border-radius: 0.5rem;
+  padding: 3rem 1rem;
+  button {
+    border: none;
+    border-radius: 10px;
+    padding: 0.5rem;
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: 0.3s ease all;
+    &:hover {
+      background-color: #2e1e17;
+      color: white;
+      transition: 0.3s ease all;
+    }
+  }
+}
+.info-modal {
+  position: relative;
+  width: 50%;
+  background: rgb(20, 15, 2);
+  border-radius: 0.5rem;
+  padding: 2rem 1rem;
+  a {
+    color: white;
+  }
+  h2 {
+    margin: 0;
+    padding: 0;
+  }
+  .info-modal-inside {
+    width: 80%;
+    margin: auto;
+    text-align: justify;
+    font-size: 1.2rem;
+    b {
+      font-weight: 800;
+    }
+  }
+  #info-modal-close {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    cursor: pointer;
+  }
+  .info-modal-foot {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 4rem;
+    .foot-box {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      p {
+        margin: 0;
+        padding: 0;
+      }
+    }
+  }
+
+  .info-examples {
+    margin-left: 1rem;
+  }
+
+  .info-row {
+    display: block;
+    p {
+      margin: 5px 0 2rem 0;
+    }
+
+    .info-tile {
+      margin: 0 2px;
+      padding: 0;
+      background-color: none;
+      width: 3rem;
+      height: 3rem;
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 2rem;
+      line-height: 2rem;
+      font-weight: bold;
+      vertical-align: middle;
+      box-sizing: border-box;
+      color: white;
+      text-transform: uppercase;
+      user-select: none;
+      border: 2px solid #80594a;
+      h3 {
+        margin: 0;
+        padding: 0;
+      }
+    }
+    .correct-place {
+      background-color: green;
+    }
+    .correct-letter {
+      background-color: rgb(236, 157, 39);
+    }
+    .not-found {
+      background-color: rgb(155, 155, 155);
+    }
+  }
+}
