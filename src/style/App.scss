@@ -175,3 +175,25 @@ body {
     }
   }
 }
+
+@media (max-width: 400px) {
+  .Keyboard {
+    .key {
+      font-size: 5vw;
+      width: initial;
+      margin: 2px;
+      padding: 0;
+      flex: 1 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-width: 1px;
+    }
+  }
+  .keyboard-row {
+    display: flex;
+    justify-content: center;
+    width: 95%;
+    margin: auto;
+  }
+}
