@@ -37,7 +37,7 @@ const Keyboard = ({
 
   // KEYPRESS
 
-  const handleKeyInput = (e) => {
+  const handleKeyInput = useCallback((e) => {
     const { key, keyCode } = e;
     if (isLetter(key)) {
       keyTileCH(key);
@@ -52,7 +52,7 @@ const Keyboard = ({
       }
       checkWord();
     }
-  };
+  });
 
   useEffect(() => {
     window.addEventListener("keydown", handleKeyInput);
@@ -66,7 +66,7 @@ const Keyboard = ({
   }
 
   const keyTileCH = (key) => {
-    if (currentTile < 5 && !tried.includes(key)) {
+    if (currentTile < 5) {
       setCurrentTile(currentTile + 1);
       setLetters([...letters, key]);
     }
@@ -97,7 +97,7 @@ const Keyboard = ({
           onClick={(e) => tileCH(e)}
           keyid="q"
           className="key"
-          disabled={keyboardDisabled || disabled || tried.includes("q")}
+          disabled={keyboardDisabled || disabled}
         >
           q
         </button>
@@ -105,7 +105,7 @@ const Keyboard = ({
           onClick={(e) => tileCH(e)}
           keyid="w"
           className="key"
-          disabled={keyboardDisabled || disabled || tried.includes("w")}
+          disabled={keyboardDisabled || disabled}
         >
           w
         </button>
@@ -113,7 +113,7 @@ const Keyboard = ({
           onClick={(e) => tileCH(e)}
           keyid="e"
           className="key"
-          disabled={keyboardDisabled || disabled || tried.includes("e")}
+          disabled={keyboardDisabled || disabled}
         >
           e
         </button>
@@ -121,7 +121,7 @@ const Keyboard = ({
           onClick={(e) => tileCH(e)}
           keyid="r"
           className="key"
-          disabled={keyboardDisabled || disabled || tried.includes("r")}
+          disabled={keyboardDisabled || disabled}
         >
           r
         </button>
@@ -129,7 +129,7 @@ const Keyboard = ({
           onClick={(e) => tileCH(e)}
           keyid="t"
           className="key"
-          disabled={keyboardDisabled || disabled || tried.includes("t")}
+          disabled={keyboardDisabled || disabled}
         >
           t
         </button>
@@ -137,7 +137,7 @@ const Keyboard = ({
           onClick={(e) => tileCH(e)}
           keyid="y"
           className="key"
-          disabled={keyboardDisabled || disabled || tried.includes("y")}
+          disabled={keyboardDisabled || disabled}
         >
           y
         </button>
@@ -145,7 +145,7 @@ const Keyboard = ({
           onClick={(e) => tileCH(e)}
           keyid="u"
           className="key"
-          disabled={keyboardDisabled || disabled || tried.includes("u")}
+          disabled={keyboardDisabled || disabled}
         >
           u
         </button>
@@ -153,7 +153,7 @@ const Keyboard = ({
           onClick={(e) => tileCH(e)}
           keyid="i"
           className="key"
-          disabled={keyboardDisabled || disabled || tried.includes("i")}
+          disabled={keyboardDisabled || disabled}
         >
           i
         </button>
@@ -161,7 +161,7 @@ const Keyboard = ({
           onClick={(e) => tileCH(e)}
           keyid="o"
           className="key"
-          disabled={keyboardDisabled || disabled || tried.includes("o")}
+          disabled={keyboardDisabled || disabled}
         >
           o
         </button>
@@ -169,7 +169,7 @@ const Keyboard = ({
           onClick={(e) => tileCH(e)}
           keyid="p"
           className="key"
-          disabled={keyboardDisabled || disabled || tried.includes("p")}
+          disabled={keyboardDisabled || disabled}
         >
           p
         </button>
@@ -179,7 +179,7 @@ const Keyboard = ({
           onClick={(e) => tileCH(e)}
           keyid="a"
           className="key"
-          disabled={keyboardDisabled || disabled || tried.includes("a")}
+          disabled={keyboardDisabled || disabled}
         >
           a
         </button>
@@ -187,7 +187,7 @@ const Keyboard = ({
           onClick={(e) => tileCH(e)}
           keyid="s"
           className="key"
-          disabled={keyboardDisabled || disabled || tried.includes("s")}
+          disabled={keyboardDisabled || disabled}
         >
           s
         </button>
@@ -195,7 +195,7 @@ const Keyboard = ({
           onClick={(e) => tileCH(e)}
           keyid="d"
           className="key"
-          disabled={keyboardDisabled || disabled || tried.includes("d")}
+          disabled={keyboardDisabled || disabled}
         >
           d
         </button>
@@ -203,7 +203,7 @@ const Keyboard = ({
           onClick={(e) => tileCH(e)}
           keyid="f"
           className="key"
-          disabled={keyboardDisabled || disabled || tried.includes("f")}
+          disabled={keyboardDisabled || disabled}
         >
           f
         </button>
@@ -211,7 +211,7 @@ const Keyboard = ({
           onClick={(e) => tileCH(e)}
           keyid="g"
           className="key"
-          disabled={keyboardDisabled || disabled || tried.includes("g")}
+          disabled={keyboardDisabled || disabled}
         >
           g
         </button>
@@ -219,7 +219,7 @@ const Keyboard = ({
           onClick={(e) => tileCH(e)}
           keyid="h"
           className="key"
-          disabled={keyboardDisabled || disabled || tried.includes("h")}
+          disabled={keyboardDisabled || disabled}
         >
           h
         </button>
@@ -227,7 +227,7 @@ const Keyboard = ({
           onClick={(e) => tileCH(e)}
           keyid="j"
           className="key"
-          disabled={keyboardDisabled || disabled || tried.includes("j")}
+          disabled={keyboardDisabled || disabled}
         >
           j
         </button>
@@ -235,7 +235,7 @@ const Keyboard = ({
           onClick={(e) => tileCH(e)}
           keyid="k"
           className="key"
-          disabled={keyboardDisabled || disabled || tried.includes("k")}
+          disabled={keyboardDisabled || disabled}
         >
           k
         </button>
@@ -243,7 +243,7 @@ const Keyboard = ({
           onClick={(e) => tileCH(e)}
           keyid="l"
           className="key"
-          disabled={keyboardDisabled || disabled || tried.includes("l")}
+          disabled={keyboardDisabled || disabled}
         >
           l
         </button>
@@ -261,7 +261,7 @@ const Keyboard = ({
           onClick={(e) => tileCH(e)}
           keyid="z"
           className="key"
-          disabled={keyboardDisabled || disabled || tried.includes("z")}
+          disabled={keyboardDisabled || disabled}
         >
           z
         </button>
@@ -269,7 +269,7 @@ const Keyboard = ({
           onClick={(e) => tileCH(e)}
           keyid="x"
           className="key"
-          disabled={keyboardDisabled || disabled || tried.includes("x")}
+          disabled={keyboardDisabled || disabled}
         >
           x
         </button>
@@ -277,7 +277,7 @@ const Keyboard = ({
           onClick={(e) => tileCH(e)}
           keyid="c"
           className="key"
-          disabled={keyboardDisabled || disabled || tried.includes("c")}
+          disabled={keyboardDisabled || disabled}
         >
           c
         </button>
@@ -285,7 +285,7 @@ const Keyboard = ({
           onClick={(e) => tileCH(e)}
           keyid="v"
           className="key"
-          disabled={keyboardDisabled || disabled || tried.includes("v")}
+          disabled={keyboardDisabled || disabled}
         >
           v
         </button>
@@ -293,7 +293,7 @@ const Keyboard = ({
           onClick={(e) => tileCH(e)}
           keyid="b"
           className="key"
-          disabled={keyboardDisabled || disabled || tried.includes("b")}
+          disabled={keyboardDisabled || disabled}
         >
           b
         </button>
@@ -301,7 +301,7 @@ const Keyboard = ({
           onClick={(e) => tileCH(e)}
           keyid="n"
           className="key"
-          disabled={keyboardDisabled || disabled || tried.includes("n")}
+          disabled={keyboardDisabled || disabled}
         >
           n
         </button>
@@ -309,7 +309,7 @@ const Keyboard = ({
           onClick={(e) => tileCH(e)}
           keyid="m"
           className="key"
-          disabled={keyboardDisabled || disabled || tried.includes("m")}
+          disabled={keyboardDisabled || disabled}
         >
           m
         </button>
