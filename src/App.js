@@ -37,6 +37,7 @@ function App() {
   const [triedLetters, setTriedLetters] = useState([]);
   const [playCount, setPlayCount] = useState(0);
   const [infoToggle, setInfoToggle] = useState(false);
+  const [goodLetters, setGoodLetters] = useState([]);
 
   const tweet = new Audio(tweetWav);
 
@@ -77,6 +78,7 @@ function App() {
       setKeyboardDisabled(false);
       getCurrentWord();
       setTriedLetters([]);
+      setGoodLetters([]);
       setGameRestart(false);
 
       console.log("Game restarted");
@@ -142,21 +144,23 @@ function App() {
     const arr = [];
     const tempLetters = [...wordSplit];
     const tried = [];
-    const goodLetters = [];
     letters.forEach((savedLetter, i) => {
       if (tempLetters[i] === savedLetter) {
+        console.log(tempLetters[i] + " = " + savedLetter);
         arr.push({ letter: savedLetter, status: "correct-place" });
         tempLetters[i] = null;
         // Add letter to "good letters" to avoid disabling
-        goodLetters.push(savedLetter);
+        setGoodLetters(...goodLetters, savedLetter);
       } else if (tempLetters.includes(savedLetter)) {
+        console.log(tempLetters + " includes " + savedLetter);
         arr.push({ letter: savedLetter, status: "correct-letter" });
         // Remove letter from check array
         let tempI = tempLetters.indexOf(savedLetter);
         tempLetters[tempI] = null;
         // Add letter to "good letters" to avoid disabling
-        goodLetters.push(savedLetter);
+        setGoodLetters(...goodLetters, savedLetter);
       } else {
+        console.log(tempLetters[i] + " not found");
         arr.push({ letter: savedLetter, status: "not-found" });
         if (!goodLetters.includes(savedLetter)) {
           tried.push(savedLetter);
